@@ -149,7 +149,7 @@ class ProductDB {
         $db = Database::getDB();
 
         $category_id = $product->getCategory()->getID();
-        $user_id= = $product->getUser()->getID();
+        $user_id =  $product->getUser()->getID();
         $code = $product->getCode();
         $name = $product->getName();
         $price = $product->getPrice();
@@ -186,7 +186,7 @@ class ProductDB {
 
         $product_id = $product->getID();
         $category_id = $product->getCategory()->getID();
-        $user_id= = $product->getUser()->getID();
+        $user_id = $product->getUser()->getID();
         $code = $product->getCode();
         $name = $product->getName();
         $price = $product->getPrice();
