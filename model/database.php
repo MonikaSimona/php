@@ -1,6 +1,7 @@
 <?php
 class Database {
-    private static $dsn = 'mysql:host=localhost;dbname=YYwPpXym72';
+
+    private static $dsn = 'mysql:host=remotemysql.com;dbname=YYwPpXym72';
     private static $username = 'YYwPpXym72';
     private static $password = 'EhiwKpeRFd';
     private static $db;
@@ -15,7 +16,7 @@ class Database {
                                      self::$password);
             } catch (PDOException $e) {
                 $error_message = $e->getMessage();
-                include('../errors/database_error.php');
+                include('errors/db_error_connect.php');
                 exit();
             }
         }

@@ -1,6 +1,6 @@
 <?php
 class ProductDB {
-    public static function getProductsByCategory($category_id) {
+    public function getProductsByCategory($category_id) {
         $db = Database::getDB();
 
         $category = CategoryDB::getCategory($category_id);
@@ -37,7 +37,7 @@ class ProductDB {
         }
     }
 
-    public static function getProductsByUser($user_id) {
+    public  function getProductsByUser($user_id) {
         $db = Database::getDB();
 
         $user = UserDB::getUser($user_id);
@@ -74,7 +74,7 @@ class ProductDB {
         }
     }
 
-    public static function getProductsByCity($city_id) {
+    public  function getProductsByCity($city_id) {
         $db = Database::getDB();
 
         $users = UserDB::getUsersByCity($city_id);
@@ -98,7 +98,7 @@ class ProductDB {
         return $products;
     }
 
-    public static function getProduct($product_id) {
+    public  function getProduct($product_id) {
         $db = Database::getDB();
         $query = 'SELECT * 
                     FROM products p
@@ -130,7 +130,7 @@ class ProductDB {
         }
     }
 
-    public static function deleteProduct($product_id) {
+    public  function deleteProduct($product_id) {
         $db = Database::getDB();
         $query = 'DELETE FROM products
                   WHERE productID = :product_id';
@@ -145,7 +145,7 @@ class ProductDB {
         }
     }
 
-    public static function addProduct($product) {
+    public  function addProduct($product) {
         $db = Database::getDB();
 
         $category_id = $product->getCategory()->getID();
@@ -181,7 +181,7 @@ class ProductDB {
         }
     }
 
-    public static function updateProduct($product) {
+    public function updateProduct($product) {
         $db = Database::getDB();
 
         $product_id = $product->getID();

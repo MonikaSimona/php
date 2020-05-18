@@ -6,20 +6,20 @@
 <table class="table">
     <?php foreach ($products as $product) :
         
-        $list_price = $product['productPrice'];
-        $description = $product['productDescription'];
+        $price = $product->getPrice();
+        $description = $product->getDescription();
               
     ?>
         <tr>
             <td  >
-                <img src="images/<?php echo htmlspecialchars($product['productCode']); ?>_s.png"
+                <img src="images/<?php echo htmlspecialchars($product->getgetDescription()); ?>_s.png"
                      alt="&nbsp;">
             </td>
             <td>
                 <p>
                     <a href="products?product_id=<?php echo
-                           $product['productID']; ?>">
-                        <?php echo htmlspecialchars($product['productName']); ?>
+                           $product->getID(); ?>">
+                        <?php echo htmlspecialchars($product->getName()); ?>
                     </a>
                 </p>
                 <p>
@@ -35,3 +35,4 @@
     </table>
 
 </main>
+<?php include 'view/footer.php';?>
