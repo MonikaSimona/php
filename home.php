@@ -12,7 +12,7 @@
     ?>
         <tr>
             <td  >
-                <img src="images/<?php echo htmlspecialchars($product->getgetDescription()); ?>_s.png"
+                <img src="images/<?php echo htmlspecialchars($product->getCode()); ?>_s.png"
                      alt="&nbsp;">
             </td>
             <td>
