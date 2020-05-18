@@ -112,17 +112,17 @@ class ProductDB {
             $row = $statement->fetch();
             $statement->closeCursor();
         
-            $category = CategoryDB::getCategory($row['categoryID']);
-            $product = new Product($category,
-                $row['userID'],
-                $row['productViews'],
-                $row['productName'],
-                $row['productDescription'],
-                $row['productCode'],
-                $row['productPrice'],
-                $row['startDate'],
-                $row['finishDate']);
-            $product->setID($row['productID']);
+            $category = CategoryDB::getCategory($row['categoryID'] ?? 'dv');
+            $product = new Product($category ?? 'dv',
+                $row['userID'] ?? 'dv',
+                $row['productViews'] ?? 'dv',
+                $row['productName'] ?? 'dv',
+                $row['productDescription'] ?? 'dv',
+                $row['productCode'] ?? 'dv',
+                $row['productPrice'] ?? 'dv',
+                $row['startDate'] ?? 'dv',
+                $row['finishDate'] ?? 'dv');
+            $product->setID($row['productID'] ?? 'dv');
             return $product;
         }catch (PDOException $e) {
             $error_message = $e->getMessage();

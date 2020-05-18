@@ -1,5 +1,5 @@
 <aside>
-<h2>Categories</h2>
+<h2>Категории</h2>
     <ul>
         <!-- display links for all categories -->
         <?php

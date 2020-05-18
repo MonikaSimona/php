@@ -36,8 +36,8 @@ class CategoryDB {
             $statement->execute();    
             $row = $statement->fetch();
             $statement->closeCursor();    
-            $category = new Category($row['categoryID'],
-                                    $row['categoryName']);
+            $category = new Category($row['categoryID'] ?? 'dv',
+                                    $row['categoryName'] ?? 'dv');
             return $category;
         }catch (PDOException $e) {
             $error_message = $e->getMessage();

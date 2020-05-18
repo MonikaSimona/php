@@ -9,7 +9,7 @@ require_once('model/product_db.php');
 require_once('model/category.php');
 require_once('model/category_db.php');
 
-$ids = array(1,2,3,4);
+$ids = array(1,2,3,5);
 
 $products = array();
 foreach($ids as $id){

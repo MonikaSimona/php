@@ -1,4 +1,5 @@
 <?php include 'view/header.php';?>
+<?php include 'view/sidebar.php'; ?>
 
 <main>
 <h1>Производи на неделата</h1>
@@ -12,8 +13,8 @@
     ?>
         <tr>
             <td  >
-                <img src="images/<?php echo htmlspecialchars($product->getCode()); ?>_s.png"
-                     alt="&nbsp;">
+                <img src="images/<?php echo htmlspecialchars($product->getCode()); ?>.jpg"
+                     alt="&nbsp;" width="400" height="400">
             </td>
             <td>
                 <p>
@@ -23,16 +24,17 @@
                     </a>
                 </p>
                 <p>
-                    <b>Your price:</b>
-                    $<?php echo number_format($unit_price, 2); ?>
+                    <b>Цена:</b>
+                    <?php echo number_format($price, 2); ?> ден.
                 </p>
                 <p>
-                    <?php echo $first_paragraph; ?>
+                    <!--<?php echo $first_paragraph; ?>-->
+                    <?php echo htmlspecialchars($description); ?>
                 </p>
             </td>
         </tr>
     <?php endforeach; ?>
     </table>
 
-</main>
+
 <?php include 'view/footer.php';?>
